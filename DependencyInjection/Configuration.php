@@ -14,6 +14,7 @@
 
 namespace Doctrine\Bundle\MongoDBBundle\DependencyInjection;
 
+use Doctrine\ODM\MongoDB\Configuration as ODMConfiguration;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -43,10 +44,10 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('proxy_namespace')->defaultValue('MongoDBODMProxies')->end()
                 ->scalarNode('proxy_dir')->defaultValue('%kernel.cache_dir%/doctrine/odm/mongodb/Proxies')->end()
-                ->scalarNode('auto_generate_proxy_classes')->defaultValue(false)->end()
+                ->scalarNode('auto_generate_proxy_classes')->defaultValue(ODMConfiguration::AUTOGENERATE_NEVER)->end()
                 ->scalarNode('hydrator_namespace')->defaultValue('Hydrators')->end()
                 ->scalarNode('hydrator_dir')->defaultValue('%kernel.cache_dir%/doctrine/odm/mongodb/Hydrators')->end()
-                ->scalarNode('auto_generate_hydrator_classes')->defaultValue(false)->end()
+                ->scalarNode('auto_generate_hydrator_classes')->defaultValue(ODMConfiguration::AUTOGENERATE_NEVER)->end()
                 ->scalarNode('default_document_manager')->end()
                 ->scalarNode('default_connection')->end()
                 ->scalarNode('default_database')->defaultValue('default')->end()
