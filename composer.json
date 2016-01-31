@@ -10,9 +10,35 @@
         {"name": "Kris Wallsmith", "email": "kris@symfony.com"},
         {"name": "Jonathan H. Wage", "email": "jonwage@gmail.com"}
     ],
+    "repositories": [
+        {
+            "type":"package",
+            "package": {
+                "name": "doctrine/mongodb",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/kamillo1888/mongodb.git",
+                    "type": "git",
+                    "reference":"master"
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package": {
+                "name": "doctrine/mongodb-odm",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/kamillo1888/mongodb-odm.git",
+                    "type": "git",
+                    "reference":"master"
+                }
+            }
+        }
+    ],
     "require": {
         "php": "^5.5 || ^7.0",
-        "doctrine/mongodb-odm": "^1.0",
+        "doctrine/mongodb-odm": "dev-master",
         "psr/log": "^1.0",
         "symfony/options-resolver": "^2.8 || ^3.0",
         "symfony/doctrine-bridge": "^2.8 || ^3.0",
